@@ -1,18 +1,19 @@
 import pygame
 
 class Paddle:
-    def __init__(self,x,y):
+    def __init__(self,x,y,wide,tall):
         self.x = x
         self.y = y
-        self.wide = 10
-        self.tall = 50
+        self.wide = wide
+        self.tall = tall
 
 
     def moveUp(self):
-        self.y += 20
-    
-    def moveDown(self):
         self.y -= 20
+
+
+    def moveDown(self):
+        self.y += 20
 
 
     def draw(self,screen,colour):
