@@ -6,14 +6,17 @@ class Paddle:
         self.y = y
         self.wide = wide
         self.tall = tall
-
+        self.vely = 0
 
     def moveUp(self):
-        self.y -= 20
+        self.vely = - 10
 
 
     def moveDown(self):
-        self.y += 20
+        self.vely = 10
+
+    def update(self):
+        self.y += self.vely
 
 
     def draw(self,screen,colour):

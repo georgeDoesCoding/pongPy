@@ -56,10 +56,19 @@ while running:
                 right_paddle.moveUp()
             if event.key == pygame.K_DOWN:
                 right_paddle.moveDown()
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_w or pygame.K_s:
+                left_paddle.vely=0
+            if event.key == pygame.K_UP or pygame.K_DOWN:
+                right_paddle.vely=0
+    
 
 
 
-    #Draw paddles
+
+    #Update and Draw paddles
+    right_paddle.update()
+    left_paddle.update()
     left_paddle.draw(screen,WHITE)
     right_paddle.draw(screen,WHITE)
 
