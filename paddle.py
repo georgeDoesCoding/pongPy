@@ -1,23 +1,22 @@
 import pygame
 
 class Paddle:
+
+    speed = 5
+    WHITE = (255,255,255)
+
     def __init__(self,x,y,wide,tall,bat_x):
-        #Top right position of bat
+        #Top left position of bat
         self.x = x
         self.y = y
         #Dimensions
         self.wide = wide
         self.tall = tall
-        #Current Velocity
         self.vely = 0
-        #Bat interface x position
         self.bat_x = bat_x
-        #Bat speed
-        self.speed =5
-
+        
     def moveUp(self):
         self.vely = -self.speed
-
     def moveDown(self):
         self.vely = self.speed
 
@@ -33,4 +32,4 @@ class Paddle:
 
 
     def draw(self,screen,colour):
-        pygame.draw.rect(screen,colour,(self.x,self.y,self.wide,self.tall))
+        pygame.draw.rect(screen,self.WHITE,(self.x,self.y,self.wide,self.tall))
